@@ -28,7 +28,7 @@ export default {
         {
           id: 3,
           title: "Solo leveling",
-          completed: true
+          completed: false
         }
       ]
     }

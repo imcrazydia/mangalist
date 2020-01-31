@@ -1,13 +1,21 @@
 <template>
     <div class="manga-item" v-bind:class="{'is-complete' : manga.completed}">
-        <p>{{ manga.title }}</p>
+        <p>
+            <input type="checkbox" v-on:change="lastChapter">
+            {{ manga.title }}
+        </p>
     </div>
 </template>
 
 <script>
 export default {
     name: "MangaItem",
-    props: ["manga"]
+    props: ["manga"],
+    methods: {
+        lastChapter() {
+            this.manga.completed = !this.manga.completed;
+        }
+    }
 }
 </script>
 
