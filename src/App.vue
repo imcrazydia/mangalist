@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     <Mangas v-bind:mangas="mangas"
             v-on:del-manga="deleteManga"
     />
@@ -7,11 +8,13 @@
 </template>
 
 <script>
+import Header from './components/layout/Header';
 import Mangas from './components/Mangas';
   
 export default {
   name: 'app',
   components: {
+    Header,
     Mangas
   },
   data() {
