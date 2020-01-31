@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <Header />
 
     <AddManga v-on:add-manga="AddManga" />
 
@@ -11,14 +10,12 @@
 </template>
 
 <script>
-import Header from '../components/layout/Header';
 import Mangas from '../components/Mangas';
 import AddManga from '../components/AddManga';
   
 export default {
   name: 'home',
   components: {
-    Header,
     Mangas,
     AddManga
   },
