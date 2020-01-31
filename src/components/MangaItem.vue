@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 .manga-item {
-    background: #f4f4f4;
+    background-color: #f4f4f4;
     padding: 10px;
     border-bottom: 1px #ccc dotted;
     color: rgb(218, 56, 56);
@@ -33,7 +33,7 @@ export default {
 }
 
 .del {
-    background: #ff0000;
+    background-color: #ff0000;
     color: #fff;
     border: none;
     padding: 5px 10px;

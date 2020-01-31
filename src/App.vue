@@ -1,6 +1,9 @@
 <template>
   <div id="app">
     <Header />
+
+    <AddManga v-on:add-manga="AddManga" />
+
     <Mangas v-bind:mangas="mangas"
             v-on:del-manga="deleteManga"
     />
@@ -10,12 +13,14 @@
 <script>
 import Header from './components/layout/Header';
 import Mangas from './components/Mangas';
+import AddManga from './components/AddManga';
   
 export default {
   name: 'app',
   components: {
     Header,
-    Mangas
+    Mangas,
+    AddManga
   },
   data() {
     return {
@@ -41,6 +46,9 @@ export default {
   methods: {
     deleteManga(id) {
       this.mangas = this.mangas.filter(manga => manga.id !== id);
+    },
+    AddManga(newManga) {
+      this.manga = [...this.mangas, newManga];
     }
   }
 }
@@ -57,5 +65,18 @@ export default {
   body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
+  }
+
+  .buttons {
+    display: inline-block;
+    border: none;
+    background-color: #555;
+    color: #fff;
+    padding: 7px 20px;
+    cursor: pointer;
+  }
+
+  .buttons:hover {
+    background-color: #666;
   }
 </style>
