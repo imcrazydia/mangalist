@@ -2,19 +2,25 @@
     <div>
         <form @submit="addManga">
             <input type="text" v-model="title" name="title" placeholder="Add Manga">
+            <br>
+            <input type="text" v-model="chapters" placeholder="Chapters">
+            <br>
+            <input type="text" v-model="image" name="image" placeholder="image url">
+            <br>
             <input type="submit" value="Submit" class="buttons">
         </form>
     </div>
 </template>
 
 <script>
-// import uuid from 'uuid';
 
 export default {
     name: "AddManga",
     data() {
         return {
-            title: ''
+            title: '',
+            chapters: '',
+            image: ''
         }
     },
     methods: {
@@ -23,12 +29,16 @@ export default {
 
             const newManga = {
                 title: this.title,
+                chapters: this.chapters,
+                image: this.image,
                 completed: false
             }
             //Send up to parent
             this.$emit('add-manga', newManga);
 
             this.title = '';
+            this.chapters = '';
+            this.image = '';
         }
     }
 }
@@ -37,15 +47,22 @@ export default {
 <style scoped>
     form {
         display: flex;
+        flex-direction: column;
+        padding-top: 2em;
     }
 
     input[type="text"] {
-        flex: 10;
-        padding: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        margin-left: 5em;
+        margin-right: 5em;
+
+        margin: 0px 5em 10px 5em;
     }
 
     input[type="submit"] {
-        flex: 2;
+        margin-left: 80em;
+        margin-right: 5em;
     }
 
 </style>

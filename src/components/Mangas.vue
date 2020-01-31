@@ -1,6 +1,5 @@
 <template>
     <div>
-        <h1>Mangas</h1>
 
         <div v-bind:key="manga.id" v-for="manga in mangas">
             <MangaItem v-bind:manga="manga"
