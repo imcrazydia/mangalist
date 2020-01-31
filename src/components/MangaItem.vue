@@ -30,6 +30,7 @@ export default {
 
 .is-complete {
     color: green;
+    background-color: #dfdfdf;
 }
 
 .del {

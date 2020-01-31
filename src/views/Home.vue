@@ -36,7 +36,17 @@ export default {
           id: 3,
           title: "Solo leveling",
           completed: false
-        }
+        },
+        {
+          id: 4,
+          title: "I'm Destined For Greatness!",
+          completed: false
+        },
+        {
+          id: 5,
+          title: "The God of High School",
+          completed: false
+        },
       ]
     }
   },
