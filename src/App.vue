@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-
+    <Mangas v-bind:mangas="mangas" />
   </div>
 </template>
 
 <script>
-
+import Mangas from './components/Mangas';
+  
 export default {
   name: 'app',
   components: {
-
+    Mangas
   },
   data() {
     return {
