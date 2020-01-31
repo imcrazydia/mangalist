@@ -1,82 +1,32 @@
 <template>
   <div id="app">
-    <Header />
-
-    <AddManga v-on:add-manga="AddManga" />
-
-    <Mangas v-bind:mangas="mangas"
-            v-on:del-manga="deleteManga"
-    />
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
 
-<script>
-import Header from './components/layout/Header';
-import Mangas from './components/Mangas';
-import AddManga from './components/AddManga';
-  
-export default {
-  name: 'app',
-  components: {
-    Header,
-    Mangas,
-    AddManga
-  },
-  data() {
-    return {
-      mangas: [
-        {
-          id: 1,
-          title: "Shield Hero",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "Iron ladies",
-          completed: false
-        },
-        {
-          id: 3,
-          title: "Solo leveling",
-          completed: false
-        }
-      ]
-    }
-  },
-  methods: {
-    deleteManga(id) {
-      this.mangas = this.mangas.filter(manga => manga.id !== id);
-    },
-    AddManga(newManga) {
-      this.manga = [...this.mangas, newManga];
-    }
-  }
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: left;
+  color: #2c3e50;
 }
 
-</script>
+#nav {
+  padding: 30px;
+}
 
-<style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
 
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.4;
-  }
-
-  .buttons {
-    display: inline-block;
-    border: none;
-    background-color: #555;
-    color: #fff;
-    padding: 7px 20px;
-    cursor: pointer;
-  }
-
-  .buttons:hover {
-    background-color: #666;
-  }
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
 </style>
