@@ -3,7 +3,9 @@
         <h1>Mangas</h1>
 
         <div v-bind:key="manga.id" v-for="manga in mangas">
-            <MangaItem v-bind:manga="manga" />
+            <MangaItem v-bind:manga="manga"
+                       v-on:del-manga="$emit('del-manga', manga.id)" 
+            />
         </div>
     </div>
 </template>

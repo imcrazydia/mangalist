@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <Mangas v-bind:mangas="mangas" />
+    <Mangas v-bind:mangas="mangas"
+            v-on:del-manga="deleteManga"
+    />
   </div>
 </template>
 
@@ -31,6 +33,11 @@ export default {
           completed: false
         }
       ]
+    }
+  },
+  methods: {
+    deleteManga(id) {
+      this.mangas = this.mangas.filter(manga => manga.id !== id);
     }
   }
 }

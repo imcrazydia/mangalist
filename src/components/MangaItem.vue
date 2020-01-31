@@ -3,6 +3,7 @@
         <p>
             <input type="checkbox" v-on:change="lastChapter">
             {{ manga.title }}
+            <button @click="$emit('del-manga', manga.id)" class="del">X</button>
         </p>
     </div>
 </template>
@@ -35,8 +36,7 @@ export default {
     background: #ff0000;
     color: #fff;
     border: none;
-    padding: 5px 9px;
-    border-radius: 50%;
+    padding: 5px 10px;
     cursor: pointer;
     float: right;
 }
