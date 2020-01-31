@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="manga-item" v-bind:class="{'is-complete' : manga.completed}">
         <p>{{ manga.title }}</p>
     </div>
 </template>
@@ -16,10 +16,11 @@ export default {
     background: #f4f4f4;
     padding: 10px;
     border-bottom: 1px #ccc dotted;
+    color: rgb(218, 56, 56);
 }
 
 .is-complete {
-    text-decoration: line-through;
+    color: green;
 }
 
 .del {
